@@ -807,7 +807,7 @@ section{position:relative;z-index:2}
 
 /* ============ SAVE THE DATE (SCRATCH-TO-REVEAL) ============ */
 .savedate{
-  position:relative;padding:4.5rem clamp(1.5rem,5vw,4rem) 4rem;
+  position:relative;padding:2.5rem clamp(1.5rem,5vw,4rem) 2.5rem;
   background:linear-gradient(180deg,var(--ivory) 0%,#eef0e8 50%,var(--ivory) 100%);
   text-align:center;overflow:hidden;
 }
@@ -827,7 +827,7 @@ section{position:relative;z-index:2}
 .savedate .h-display em{color:#5a7a5e}
 
 .scratch-row{
-  display:flex;justify-content:center;gap:1rem;flex-wrap:nowrap;margin:3rem auto 0;
+  display:flex;justify-content:center;gap:1rem;flex-wrap:nowrap;margin:1.5rem auto 0;
   max-width:520px;padding:0 .5rem;
 }
 .scratch-tile{
@@ -868,7 +868,7 @@ section{position:relative;z-index:2}
 
 .savedate-foot{
   font-family:'Cormorant Garamond',serif;font-style:italic;color:#3f5a45;
-  margin-top:2.4rem;opacity:0;transition:opacity .8s ease;
+  margin-top:1.2rem;opacity:0;transition:opacity .8s ease;
   font-size:1.1rem;
 }
 .savedate-foot.revealed{opacity:.85}
@@ -909,7 +909,7 @@ section{position:relative;z-index:2}
 
 /* ============ EVENTS (HORIZONTAL PINNED SCROLL) ============ */
 .events{background:linear-gradient(180deg,var(--ivory) 0%,var(--champagne-soft) 100%);position:relative;overflow:hidden}
-.events-head{padding:4rem clamp(1.5rem,5vw,4rem) 1rem;text-align:center;max-width:760px;margin:0 auto}
+.events-head{padding:2rem clamp(1.5rem,5vw,4rem) 1rem;text-align:center;max-width:760px;margin:0 auto}
 .events-pin{height:140vh;position:relative}
 .events-track-wrap{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden}
 .events-track{display:flex;gap:2rem;padding:0 8vw;will-change:transform}
@@ -1085,10 +1085,10 @@ section{position:relative;z-index:2}
 /* ============ MEMORY REEL (STACKED FILM FRAMES) ============ */
 .reel{
   background:linear-gradient(180deg,var(--paper) 0%,var(--ivory-deep) 100%);
-  padding:4rem 0 5rem;position:relative;
+  padding:2.5rem 0 3rem;position:relative;
 }
-.reel-head{text-align:center;max-width:720px;margin:0 auto 2rem;padding:0 1.5rem}
-.reel-stage{position:relative;height:95vh}
+.reel-head{text-align:center;max-width:720px;margin:0 auto 1rem;padding:0 1.5rem}
+.reel-stage{position:relative;height:260vh}
 .reel-track{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .reel-frame{
   position:absolute;width:min(70vw,360px);aspect-ratio:3/4;
@@ -1809,180 +1809,393 @@ section{position:relative;z-index:2}
       <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <linearGradient id="vSky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#fdf2dc"/>
-            <stop offset="40%" stop-color="#fbd8a4"/>
-            <stop offset="80%" stop-color="#e8a06b"/>
-            <stop offset="100%" stop-color="#a85a4a"/>
+            <stop offset="0%" stop-color="#0d0820"/>
+            <stop offset="35%" stop-color="#2a0e2e"/>
+            <stop offset="65%" stop-color="#6b1a28"/>
+            <stop offset="100%" stop-color="#a8341e"/>
           </linearGradient>
-          <radialGradient id="vSun" cx="50%" cy="40%" r="20%">
-            <stop offset="0%" stop-color="#ffe9b0" stop-opacity=".95"/>
+          <radialGradient id="vMoonGlow" cx="78%" cy="18%" r="18%">
+            <stop offset="0%" stop-color="#fff8e8" stop-opacity=".95"/>
+            <stop offset="40%" stop-color="#ffd680" stop-opacity=".35"/>
             <stop offset="100%" stop-color="#ffd680" stop-opacity="0"/>
           </radialGradient>
-          <linearGradient id="vPillar" x1="0" y1="0" x2="0" y2="1">
+          <radialGradient id="vFireGlow" cx="50%" cy="0%" r="80%">
+            <stop offset="0%" stop-color="#ffcc55" stop-opacity=".7"/>
+            <stop offset="60%" stop-color="#e05a20" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="#e05a20" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="vPillarL" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#5a2214"/>
+            <stop offset="30%" stop-color="#c4621a"/>
+            <stop offset="60%" stop-color="#e88030"/>
+            <stop offset="100%" stop-color="#7a3214"/>
+          </linearGradient>
+          <linearGradient id="vRoof" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#8a1820"/>
+            <stop offset="50%" stop-color="#c42a38"/>
+            <stop offset="100%" stop-color="#8a1820"/>
+          </linearGradient>
+          <linearGradient id="vCarpet" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#5a0e18" stop-opacity=".3"/>
+            <stop offset="50%" stop-color="#c42a38" stop-opacity=".75"/>
+            <stop offset="100%" stop-color="#5a0e18" stop-opacity=".3"/>
+          </linearGradient>
+          <linearGradient id="vFabricL" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c42a38"/>
+            <stop offset="100%" stop-color="#8a1820"/>
+          </linearGradient>
+          <linearGradient id="vFabricR" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#d4853f"/>
             <stop offset="100%" stop-color="#8a4818"/>
           </linearGradient>
-          <linearGradient id="vAisle" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#7a1620" stop-opacity=".4"/>
-            <stop offset="50%" stop-color="#a83344" stop-opacity=".6"/>
-            <stop offset="100%" stop-color="#7a1620" stop-opacity=".4"/>
-          </linearGradient>
+          <filter id="vLanternBlur">
+            <feGaussianBlur stdDeviation="3"/>
+          </filter>
+          <filter id="vFireBlur">
+            <feGaussianBlur stdDeviation="2"/>
+          </filter>
+          <radialGradient id="vDiyaGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffee88" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#ff8800" stop-opacity="0"/>
+          </radialGradient>
         </defs>
 
-        <!-- Sky / sunset gradient -->
+        <!-- Night sky -->
         <rect width="400" height="500" fill="url(#vSky)"/>
 
-        <!-- Sun glow -->
-        <circle cx="200" cy="190" r="60" fill="url(#vSun)"/>
-        <circle cx="200" cy="190" r="22" fill="#fff5d6" opacity=".6"/>
-
-        <!-- Distant temple silhouettes (left + right) -->
-        <g fill="#7a3a2a" opacity=".55">
-          <path d="M0 280 L0 220 L18 220 L18 235 L34 215 L50 235 L50 220 L65 220 L65 280 Z"/>
-          <path d="M70 290 L70 240 L86 230 L102 240 L102 290 Z"/>
-          <path d="M335 290 L335 240 L351 230 L367 240 L367 290 Z"/>
-          <path d="M380 280 L380 220 L394 220 L394 232 L400 232 L400 280 Z"/>
+        <!-- Stars -->
+        <g fill="#fff8e8" opacity=".9">
+          <circle cx="25" cy="20" r="1"/><circle cx="60" cy="35" r=".8"/><circle cx="95" cy="12" r="1.2"/>
+          <circle cx="140" cy="28" r=".7"/><circle cx="170" cy="10" r="1"/><circle cx="210" cy="22" r=".8"/>
+          <circle cx="260" cy="14" r="1.1"/><circle cx="305" cy="30" r=".7"/><circle cx="340" cy="8" r="1"/>
+          <circle cx="375" cy="25" r=".9"/><circle cx="45" cy="55" r=".7"/><circle cx="120" cy="48" r=".9"/>
+          <circle cx="230" cy="45" r=".8"/><circle cx="360" cy="52" r="1"/><circle cx="15" cy="80" r=".6"/>
+          <circle cx="80" cy="72" r=".8"/><circle cx="320" cy="68" r=".7"/><circle cx="385" cy="75" r=".9"/>
         </g>
 
-        <!-- Tree silhouettes -->
-        <g fill="#3a5e3a" opacity=".7">
-          <ellipse cx="40" cy="270" rx="28" ry="22"/>
-          <rect x="36" y="280" width="8" height="20" fill="#3a2014"/>
-          <ellipse cx="360" cy="270" rx="28" ry="22"/>
-          <rect x="356" y="280" width="8" height="20" fill="#3a2014"/>
+        <!-- Moon -->
+        <circle cx="312" cy="72" r="18" fill="#fff8e8" opacity=".92"/>
+        <circle cx="318" cy="66" r="14" fill="#1a0a22" opacity=".7"/>
+        <circle cx="312" cy="72" r="18" fill="url(#vMoonGlow)"/>
+
+        <!-- Distant fireworks glow -->
+        <circle cx="60" cy="110" r="28" fill="#e05a20" opacity=".12" filter="url(#vFireBlur)"/>
+        <circle cx="340" cy="90" r="22" fill="#d4b16a" opacity=".15" filter="url(#vFireBlur)"/>
+        <g stroke="#ffd680" stroke-width=".7" opacity=".4" fill="none">
+          <line x1="60" y1="110" x2="38" y2="86"/><line x1="60" y1="110" x2="80" y2="84"/><line x1="60" y1="110" x2="48" y2="130"/><line x1="60" y1="110" x2="78" y2="128"/>
+          <line x1="340" y1="90" x2="318" y2="68"/><line x1="340" y1="90" x2="360" y2="68"/><line x1="340" y1="90" x2="352" y2="112"/><line x1="340" y1="90" x2="322" y2="112"/>
         </g>
 
-        <!-- MANTAP STRUCTURE (Indian wedding pavilion) -->
+        <!-- Banana leaf columns (far left + right) -->
+        <g fill="#1e5228" opacity=".85">
+          <ellipse cx="22" cy="250" rx="14" ry="36" transform="rotate(-12 22 250)"/>
+          <ellipse cx="30" cy="210" rx="12" ry="30" transform="rotate(8 30 210)"/>
+          <ellipse cx="14" cy="228" rx="10" ry="28" transform="rotate(-20 14 228)"/>
+          <rect x="20" y="280" width="6" height="50" fill="#3a2010"/>
+        </g>
+        <g fill="#1e5228" opacity=".85">
+          <ellipse cx="378" cy="250" rx="14" ry="36" transform="rotate(12 378 250)"/>
+          <ellipse cx="370" cy="210" rx="12" ry="30" transform="rotate(-8 370 210)"/>
+          <ellipse cx="386" cy="228" rx="10" ry="28" transform="rotate(20 386 228)"/>
+          <rect x="374" y="280" width="6" height="50" fill="#3a2010"/>
+        </g>
+
+        <!-- TORAN (hanging entrance banner) across top -->
+        <path d="M60 148 Q100 138 140 148 Q180 138 200 148 Q220 138 260 148 Q300 138 340 148" fill="none" stroke="#d4b16a" stroke-width="2" opacity=".9"/>
+        <g fill="#f5a02a" opacity=".9">
+          <!-- mango-leaf toran shapes -->
+          <ellipse cx="80" cy="152" rx="5" ry="10" transform="rotate(-20 80 152)"/>
+          <ellipse cx="105" cy="146" rx="5" ry="10" transform="rotate(-10 105 146)"/>
+          <ellipse cx="130" cy="142" rx="5" ry="10" transform="rotate(5 130 142)"/>
+          <ellipse cx="155" cy="146" rx="5" ry="10" transform="rotate(15 155 146)"/>
+          <ellipse cx="175" cy="148" rx="5" ry="10" transform="rotate(-5 175 148)"/>
+          <ellipse cx="200" cy="142" rx="5" ry="11" transform="rotate(0 200 142)"/>
+          <ellipse cx="225" cy="148" rx="5" ry="10" transform="rotate(5 225 148)"/>
+          <ellipse cx="245" cy="146" rx="5" ry="10" transform="rotate(-15 245 146)"/>
+          <ellipse cx="270" cy="142" rx="5" ry="10" transform="rotate(-5 270 142)"/>
+          <ellipse cx="295" cy="146" rx="5" ry="10" transform="rotate(10 295 146)"/>
+          <ellipse cx="320" cy="152" rx="5" ry="10" transform="rotate(20 320 152)"/>
+        </g>
+        <!-- Toran marigold pompoms -->
+        <g fill="#e75a36">
+          <circle cx="60" cy="148" r="6"/><circle cx="120" cy="141" r="6"/><circle cx="180" cy="141" r="6"/>
+          <circle cx="200" cy="140" r="7"/><circle cx="220" cy="141" r="6"/>
+          <circle cx="280" cy="141" r="6"/><circle cx="340" cy="148" r="6"/>
+        </g>
+        <g fill="#ffd000" opacity=".7">
+          <circle cx="60" cy="148" r="3"/><circle cx="120" cy="141" r="3"/><circle cx="180" cy="141" r="3"/>
+          <circle cx="200" cy="140" r="3.5"/><circle cx="220" cy="141" r="3"/>
+          <circle cx="280" cy="141" r="3"/><circle cx="340" cy="148" r="3"/>
+        </g>
+
+        <!-- MANDAP ROOF (layered) -->
+        <!-- Outer roof layer -->
+        <path d="M55 200 L200 135 L345 200 Z" fill="url(#vRoof)" opacity=".95"/>
+        <path d="M55 200 L200 135 L345 200 Z" fill="none" stroke="#d4b16a" stroke-width="1.5" opacity=".8"/>
+        <!-- Inner roof layer -->
+        <path d="M80 200 L200 155 L320 200 Z" fill="#8a1820" opacity=".8"/>
+        <path d="M80 200 L200 155 L320 200 Z" fill="none" stroke="#d4b16a" stroke-width="1" opacity=".7"/>
+        <!-- Roof finial / kalash on top -->
+        <line x1="200" y1="135" x2="200" y2="112" stroke="#d4b16a" stroke-width="2"/>
+        <ellipse cx="200" cy="108" rx="8" ry="5" fill="#d4b16a"/>
+        <ellipse cx="200" cy="104" rx="5" ry="3" fill="#e8c870"/>
+        <circle cx="200" cy="101" r="3" fill="#c8a040"/>
+
+        <!-- Decorative gold trim on roof edges -->
+        <g fill="#d4b16a" opacity=".8">
+          <circle cx="55" cy="200" r="3"/><circle cx="345" cy="200" r="3"/>
+          <circle cx="130" cy="166" r="2"/><circle cx="270" cy="166" r="2"/>
+          <circle cx="200" cy="135" r="2.5"/>
+        </g>
+
+        <!-- Garland arch on roof edge with marigolds + roses -->
+        <path d="M58 202 Q130 188 200 182 Q270 188 342 202" fill="none" stroke="#3a6234" stroke-width="2.5" opacity=".85"/>
+        <!-- Marigold clusters -->
         <g>
-          <!-- Back canopy / shadow -->
-          <path d="M90 320 L90 165 Q200 130 310 165 L310 320 Z" fill="rgba(58,30,20,0.15)"/>
+          <circle cx="72" cy="200" r="7" fill="#f5a02a"/><circle cx="72" cy="200" r="3.5" fill="#e07800"/>
+          <circle cx="100" cy="195" r="6" fill="#e75a36"/><circle cx="100" cy="195" r="2.5" fill="#a83320"/>
+          <circle cx="128" cy="190" r="7" fill="#f5a02a"/><circle cx="128" cy="190" r="3" fill="#e07800"/>
+          <circle cx="156" cy="186" r="6" fill="#f49bb0"/><circle cx="156" cy="186" r="2.5" fill="#c06878"/>
+          <circle cx="182" cy="184" r="7" fill="#e75a36"/><circle cx="182" cy="184" r="3" fill="#a83320"/>
+          <circle cx="200" cy="183" r="8" fill="#f5a02a"/><circle cx="200" cy="183" r="4" fill="#e07800"/>
+          <circle cx="218" cy="184" r="7" fill="#e75a36"/><circle cx="218" cy="184" r="3" fill="#a83320"/>
+          <circle cx="244" cy="186" r="6" fill="#f49bb0"/><circle cx="244" cy="186" r="2.5" fill="#c06878"/>
+          <circle cx="272" cy="190" r="7" fill="#f5a02a"/><circle cx="272" cy="190" r="3" fill="#e07800"/>
+          <circle cx="300" cy="195" r="6" fill="#e75a36"/><circle cx="300" cy="195" r="2.5" fill="#a83320"/>
+          <circle cx="328" cy="200" r="7" fill="#f5a02a"/><circle cx="328" cy="200" r="3" fill="#e07800"/>
+        </g>
 
-          <!-- Top decorative arch (chudi-style) -->
-          <path d="M100 165 Q200 120 300 165" fill="none" stroke="#8a4818" stroke-width="3"/>
-          <path d="M100 165 Q200 140 300 165" fill="none" stroke="#d4853f" stroke-width="1.5"/>
+        <!-- Hanging flower chains from roof -->
+        <g stroke="#3a6234" stroke-width="1" fill="none" opacity=".75">
+          <path d="M90 202 Q88 222 92 245"/>
+          <path d="M150 188 Q148 210 152 235"/>
+          <path d="M200 184 Q200 208 200 232"/>
+          <path d="M250 188 Q252 210 248 235"/>
+          <path d="M310 202 Q312 222 308 245"/>
+        </g>
+        <g fill="#f49bb0" opacity=".9">
+          <circle cx="91" cy="222" r="3.5"/><circle cx="92" cy="242" r="3"/>
+          <circle cx="151" cy="212" r="3.5"/><circle cx="152" cy="232" r="3"/>
+          <circle cx="200" cy="210" r="4"/><circle cx="200" cy="230" r="3.5"/>
+          <circle cx="251" cy="212" r="3.5"/><circle cx="248" cy="232" r="3"/>
+          <circle cx="311" cy="222" r="3.5"/><circle cx="308" cy="242" r="3"/>
+        </g>
+        <g fill="#f5a02a" opacity=".9">
+          <circle cx="91" cy="234" r="2.5"/><circle cx="151" cy="224" r="2.5"/>
+          <circle cx="200" cy="220" r="3"/><circle cx="251" cy="224" r="2.5"/>
+          <circle cx="311" cy="234" r="2.5"/>
+        </g>
 
-          <!-- Top floral garland on arch (marigolds + leaves) -->
-          <g>
-            <circle cx="100" cy="165" r="7" fill="#e75a36"/><circle cx="100" cy="165" r="3" fill="#a83320"/>
-            <circle cx="125" cy="155" r="6" fill="#f5a02a"/>
-            <circle cx="155" cy="142" r="7" fill="#d62b3a"/><circle cx="155" cy="142" r="3" fill="#7a1620"/>
-            <circle cx="185" cy="135" r="6" fill="#f49bb0"/>
-            <circle cx="200" cy="132" r="8" fill="#e75a36"/><circle cx="200" cy="132" r="4" fill="#a83320"/>
-            <circle cx="215" cy="135" r="6" fill="#f49bb0"/>
-            <circle cx="245" cy="142" r="7" fill="#d62b3a"/><circle cx="245" cy="142" r="3" fill="#7a1620"/>
-            <circle cx="275" cy="155" r="6" fill="#f5a02a"/>
-            <circle cx="300" cy="165" r="7" fill="#e75a36"/><circle cx="300" cy="165" r="3" fill="#a83320"/>
+        <!-- 6 PILLARS (3 left + 3 right) -->
+        <!-- Left pillars -->
+        <rect x="62" y="200" width="18" height="148" fill="url(#vPillarL)"/>
+        <rect x="108" y="200" width="14" height="148" fill="url(#vPillarL)" opacity=".85"/>
+        <rect x="150" y="200" width="12" height="148" fill="url(#vPillarL)" opacity=".7"/>
+        <!-- Right pillars -->
+        <rect x="320" y="200" width="18" height="148" fill="url(#vPillarL)"/>
+        <rect x="278" y="200" width="14" height="148" fill="url(#vPillarL)" opacity=".85"/>
+        <rect x="238" y="200" width="12" height="148" fill="url(#vPillarL)" opacity=".7"/>
+
+        <!-- Pillar capitals (top) -->
+        <g fill="#5a2214">
+          <rect x="58" y="198" width="26" height="8" rx="1"/><rect x="104" y="198" width="22" height="7" rx="1"/>
+          <rect x="146" y="198" width="20" height="6" rx="1"/>
+          <rect x="316" y="198" width="26" height="8" rx="1"/><rect x="274" y="198" width="22" height="7" rx="1"/>
+          <rect x="234" y="198" width="20" height="6" rx="1"/>
+        </g>
+        <!-- Pillar bases -->
+        <g fill="#5a2214">
+          <rect x="58" y="340" width="26" height="10" rx="1"/><rect x="104" y="340" width="22" height="9" rx="1"/>
+          <rect x="146" y="340" width="20" height="8" rx="1"/>
+          <rect x="316" y="340" width="26" height="10" rx="1"/><rect x="274" y="340" width="22" height="9" rx="1"/>
+          <rect x="234" y="340" width="20" height="8" rx="1"/>
+        </g>
+        <!-- Pillar carved rings -->
+        <g fill="#3a1208" opacity=".6">
+          <rect x="60" y="248" width="22" height="2.5"/><rect x="60" y="296" width="22" height="2.5"/>
+          <rect x="106" y="248" width="18" height="2"/><rect x="106" y="296" width="18" height="2"/>
+          <rect x="316" y="248" width="22" height="2.5"/><rect x="316" y="296" width="22" height="2.5"/>
+          <rect x="274" y="248" width="18" height="2"/><rect x="274" y="296" width="18" height="2"/>
+        </g>
+
+        <!-- Flower wraps on front pillars -->
+        <g opacity=".9">
+          <ellipse cx="71" cy="218" rx="12" ry="13" fill="#e75a36"/>
+          <ellipse cx="71" cy="258" rx="11" ry="12" fill="#f5a02a"/>
+          <ellipse cx="71" cy="298" rx="12" ry="13" fill="#d62b3a"/>
+          <ellipse cx="71" cy="335" rx="10" ry="10" fill="#f49bb0"/>
+          <ellipse cx="329" cy="218" rx="12" ry="13" fill="#e75a36"/>
+          <ellipse cx="329" cy="258" rx="11" ry="12" fill="#f5a02a"/>
+          <ellipse cx="329" cy="298" rx="12" ry="13" fill="#d62b3a"/>
+          <ellipse cx="329" cy="335" rx="10" ry="10" fill="#f49bb0"/>
+        </g>
+
+        <!-- Draped fabric panels between pillars -->
+        <path d="M80 208 Q130 260 162 208" fill="url(#vFabricL)" opacity=".55" stroke="#d4b16a" stroke-width=".5"/>
+        <path d="M238 208 Q270 260 320 208" fill="url(#vFabricR)" opacity=".55" stroke="#d4b16a" stroke-width=".5"/>
+        <!-- Gold fringe on fabric -->
+        <g stroke="#d4b16a" stroke-width=".8" opacity=".6">
+          <line x1="95" y1="228" x2="93" y2="242"/><line x1="108" y1="238" x2="106" y2="252"/>
+          <line x1="120" y1="244" x2="118" y2="258"/><line x1="132" y1="246" x2="130" y2="260"/>
+          <line x1="145" y1="240" x2="143" y2="254"/>
+          <line x1="248" y1="228" x2="250" y2="242"/><line x1="260" y1="238" x2="262" y2="252"/>
+          <line x1="272" y1="244" x2="274" y2="258"/><line x1="285" y1="240" x2="287" y2="254"/>
+          <line x1="307" y1="230" x2="309" y2="244"/>
+        </g>
+
+        <!-- STAGE PLATFORM -->
+        <rect x="80" y="342" width="240" height="14" rx="2" fill="#5a2214"/>
+        <rect x="76" y="350" width="248" height="6" rx="1" fill="#7a3218"/>
+        <rect x="80" y="342" width="240" height="3" fill="#8a4a28" opacity=".5"/>
+
+        <!-- Rangoli on stage floor -->
+        <g transform="translate(200 330)" opacity=".7">
+          <circle cx="0" cy="0" r="22" fill="none" stroke="#d4b16a" stroke-width="1"/>
+          <circle cx="0" cy="0" r="14" fill="none" stroke="#e75a36" stroke-width="1.2"/>
+          <circle cx="0" cy="0" r="7" fill="#f5a02a" opacity=".5"/>
+          <g stroke="#d4b16a" stroke-width=".8" opacity=".8">
+            <line x1="0" y1="-22" x2="0" y2="-14"/><line x1="0" y1="14" x2="0" y2="22"/>
+            <line x1="-22" y1="0" x2="-14" y2="0"/><line x1="14" y1="0" x2="22" y2="0"/>
+            <line x1="-16" y1="-16" x2="-10" y2="-10"/><line x1="10" y1="-10" x2="16" y2="-16"/>
+            <line x1="-16" y1="16" x2="-10" y2="10"/><line x1="10" y1="10" x2="16" y2="16"/>
           </g>
-          <!-- Hanging strands -->
-          <g stroke="#3a6234" stroke-width="1.2" fill="none" opacity=".8">
-            <path d="M115 168 Q113 195 118 220"/>
-            <path d="M170 145 Q168 175 175 200"/>
-            <path d="M230 145 Q232 175 225 200"/>
-            <path d="M285 168 Q287 195 282 220"/>
-          </g>
-          <g fill="#f49bb0" opacity=".9">
-            <circle cx="116" cy="195" r="3"/><circle cx="118" cy="215" r="3"/>
-            <circle cx="172" cy="180" r="3"/><circle cx="175" cy="200" r="3"/>
-            <circle cx="231" cy="180" r="3"/><circle cx="226" cy="200" r="3"/>
-            <circle cx="286" cy="195" r="3"/><circle cx="282" cy="215" r="3"/>
-          </g>
-
-          <!-- 4 pillars (front 2 + back 2) -->
-          <rect x="92" y="170" width="16" height="155" fill="url(#vPillar)"/>
-          <rect x="292" y="170" width="16" height="155" fill="url(#vPillar)"/>
-          <rect x="135" y="185" width="12" height="140" fill="url(#vPillar)" opacity=".7"/>
-          <rect x="253" y="185" width="12" height="140" fill="url(#vPillar)" opacity=".7"/>
-
-          <!-- Pillar bases & capitals -->
-          <g fill="#5a2a14">
-            <rect x="88" y="320" width="24" height="10"/><rect x="88" y="170" width="24" height="6"/>
-            <rect x="288" y="320" width="24" height="10"/><rect x="288" y="170" width="24" height="6"/>
-            <rect x="131" y="320" width="20" height="8" opacity=".7"/>
-            <rect x="249" y="320" width="20" height="8" opacity=".7"/>
-          </g>
-
-          <!-- Pillar carved rings -->
-          <g fill="#5a2a14">
-            <rect x="89" y="220" width="22" height="3"/><rect x="89" y="270" width="22" height="3"/>
-            <rect x="289" y="220" width="22" height="3"/><rect x="289" y="270" width="22" height="3"/>
-          </g>
-
-          <!-- Curtain swags between pillars -->
-          <path d="M108 175 Q150 230 200 175" fill="rgba(231,90,54,.35)" stroke="#a83320" stroke-width=".8"/>
-          <path d="M200 175 Q250 230 292 175" fill="rgba(231,90,54,.35)" stroke="#a83320" stroke-width=".8"/>
-
-          <!-- Decorated archway above stage -->
-          <path d="M108 175 Q200 145 292 175" fill="none" stroke="#d4b16a" stroke-width="2"/>
-          <g fill="#d4b16a">
-            <circle cx="140" cy="170" r="2"/><circle cx="170" cy="160" r="2"/>
-            <circle cx="200" cy="155" r="2.5"/>
-            <circle cx="230" cy="160" r="2"/><circle cx="260" cy="170" r="2"/>
-          </g>
-
-          <!-- Two thrones / chairs on stage -->
-          <g>
-            <!-- left throne back -->
-            <rect x="155" y="270" width="32" height="55" fill="#a85e2a"/>
-            <path d="M155 270 L155 260 L187 260 L187 270 Z" fill="#7a3a18"/>
-            <rect x="153" y="320" width="36" height="8" fill="#5a2a14"/>
-            <!-- right throne -->
-            <rect x="213" y="270" width="32" height="55" fill="#a85e2a"/>
-            <path d="M213 270 L213 260 L245 260 L245 270 Z" fill="#7a3a18"/>
-            <rect x="211" y="320" width="36" height="8" fill="#5a2a14"/>
-          </g>
-
-          <!-- Side floral pillar wraps -->
-          <g>
-            <ellipse cx="100" cy="200" rx="13" ry="14" fill="#e75a36" opacity=".8"/>
-            <ellipse cx="300" cy="200" rx="13" ry="14" fill="#e75a36" opacity=".8"/>
-            <ellipse cx="100" cy="240" rx="11" ry="12" fill="#f5a02a" opacity=".8"/>
-            <ellipse cx="300" cy="240" rx="11" ry="12" fill="#f5a02a" opacity=".8"/>
-            <ellipse cx="100" cy="280" rx="12" ry="13" fill="#d62b3a" opacity=".8"/>
-            <ellipse cx="300" cy="280" rx="12" ry="13" fill="#d62b3a" opacity=".8"/>
-          </g>
-
-          <!-- Sacred fire (kalash) center stage -->
-          <g>
-            <ellipse cx="200" cy="318" rx="16" ry="5" fill="#5a2a14"/>
-            <path d="M188 318 Q192 296 200 290 Q208 296 212 318 Z" fill="#d4b16a"/>
-            <path d="M196 295 Q200 280 204 295 Q200 285 196 295" fill="#e75a36"/>
-            <path d="M198 285 Q200 275 202 285" fill="#fff5d6"/>
+          <g fill="#e75a36" opacity=".6">
+            <circle cx="0" cy="-18" r="2"/><circle cx="0" cy="18" r="2"/>
+            <circle cx="-18" cy="0" r="2"/><circle cx="18" cy="0" r="2"/>
           </g>
         </g>
 
-        <!-- Aisle / red carpet leading to mantap -->
-        <path d="M170 330 L70 500 L330 500 L230 330 Z" fill="url(#vAisle)"/>
-        <path d="M170 330 L72 498 L160 498 L188 330 Z" fill="rgba(212,177,106,0.08)"/>
+        <!-- Sacred fire (agni kund) — center stage -->
+        <ellipse cx="200" cy="340" rx="14" ry="4" fill="#3a1208"/>
+        <!-- Fire glow -->
+        <ellipse cx="200" cy="332" rx="18" ry="10" fill="url(#vDiyaGlow)" opacity=".5" filter="url(#vFireBlur)"/>
+        <path d="M192 340 Q196 320 200 312 Q204 320 208 340 Z" fill="#d4b16a"/>
+        <path d="M195 318 Q200 304 205 318 Q200 310 195 318" fill="#f5a02a"/>
+        <path d="M198 308 Q200 298 202 308" fill="#fff8d6"/>
+        <!-- Smoke wisps -->
+        <path d="M198 295 Q196 285 200 278 Q204 285 202 295" fill="none" stroke="#aaa" stroke-width=".8" opacity=".3"/>
 
-        <!-- Aisle floral runners -->
-        <g fill="#fdfdfd" opacity=".75">
-          <circle cx="100" cy="450" r="2.5"/><circle cx="115" cy="430" r="2"/><circle cx="130" cy="410" r="2.5"/><circle cx="145" cy="390" r="2"/><circle cx="160" cy="370" r="2.5"/>
-          <circle cx="300" cy="450" r="2.5"/><circle cx="285" cy="430" r="2"/><circle cx="270" cy="410" r="2.5"/><circle cx="255" cy="390" r="2"/><circle cx="240" cy="370" r="2.5"/>
+        <!-- COUPLE SILHOUETTES seated on thrones -->
+        <!-- Left throne (bride) -->
+        <rect x="148" y="278" width="34" height="60" rx="3" fill="#7a2218"/>
+        <path d="M146 278 L146 268 Q165 258 182 268 L182 278 Z" fill="#5a1812"/>
+        <rect x="144" y="334" width="38" height="10" rx="2" fill="#3a1208"/>
+        <!-- Bride figure -->
+        <ellipse cx="165" cy="262" rx="8" ry="9" fill="#c8785a"/>
+        <path d="M154 300 Q165 280 176 300 L175 336 L155 336 Z" fill="#c42a38"/>
+        <!-- Bride dupatta/veil hint -->
+        <path d="M157 261 Q148 268 150 285 Q162 278 165 272" fill="#d4b16a" opacity=".6"/>
+
+        <!-- Right throne (groom) -->
+        <rect x="218" y="278" width="34" height="60" rx="3" fill="#7a2218"/>
+        <path d="M218 278 L218 268 Q235 258 254 268 L254 278 Z" fill="#5a1812"/>
+        <rect x="216" y="334" width="38" height="10" rx="2" fill="#3a1208"/>
+        <!-- Groom figure -->
+        <ellipse cx="235" cy="262" rx="8" ry="9" fill="#c8785a"/>
+        <path d="M224 300 Q235 280 246 300 L245 336 L225 336 Z" fill="#c42a38"/>
+        <!-- Groom sherwani collar -->
+        <path d="M228 272 L235 268 L242 272 L238 280 L232 280 Z" fill="#d4b16a" opacity=".7"/>
+
+        <!-- Throne gold trim -->
+        <g stroke="#d4b16a" stroke-width="1" fill="none" opacity=".7">
+          <rect x="148" y="278" width="34" height="60" rx="3"/>
+          <rect x="218" y="278" width="34" height="60" rx="3"/>
         </g>
-        <g fill="#f49bb0" opacity=".85">
-          <circle cx="120" cy="445" r="2.5"/><circle cx="140" cy="415" r="2.5"/><circle cx="160" cy="385" r="2.5"/>
-          <circle cx="280" cy="445" r="2.5"/><circle cx="260" cy="415" r="2.5"/><circle cx="240" cy="385" r="2.5"/>
-        </g>
 
-        <!-- Floor -->
-        <ellipse cx="200" cy="498" rx="200" ry="6" fill="rgba(122,40,40,.3)"/>
-
-        <!-- Falling rose petals across foreground -->
-        <g fill="#e07a85" opacity=".6">
-          <ellipse cx="60" cy="380" rx="4" ry="2" transform="rotate(20 60 380)"/>
-          <ellipse cx="350" cy="350" rx="4" ry="2" transform="rotate(-30 350 350)"/>
-          <ellipse cx="80" cy="420" rx="3.5" ry="1.8" transform="rotate(45 80 420)"/>
-          <ellipse cx="320" cy="430" rx="3.5" ry="1.8" transform="rotate(-15 320 430)"/>
-          <ellipse cx="40" cy="320" rx="3" ry="1.5" transform="rotate(60 40 320)"/>
-        </g>
-
-        <!-- Lantern lights hanging -->
+        <!-- Diyas (brass oil lamps) row on stage edge -->
         <g>
-          <circle cx="50" cy="155" r="6" fill="#ffd680" opacity=".85"/>
-          <circle cx="50" cy="155" r="14" fill="#ffd680" opacity=".25"/>
-          <circle cx="350" cy="155" r="6" fill="#ffd680" opacity=".85"/>
-          <circle cx="350" cy="155" r="14" fill="#ffd680" opacity=".25"/>
+          <!-- Diya bodies -->
+          <g fill="#b87820">
+            <path d="M98 354 Q104 348 110 354 L109 358 L99 358 Z"/>
+            <path d="M128 354 Q134 348 140 354 L139 358 L129 358 Z"/>
+            <path d="M158 354 Q164 348 170 354 L169 358 L159 358 Z"/>
+            <path d="M228 354 Q234 348 240 354 L239 358 L229 358 Z"/>
+            <path d="M258 354 Q264 348 270 354 L269 358 L259 358 Z"/>
+            <path d="M288 354 Q294 348 300 354 L299 358 L289 358 Z"/>
+          </g>
+          <!-- Diya flames -->
+          <g fill="#ffee44" opacity=".9">
+            <ellipse cx="104" cy="346" rx="2" ry="4"/><ellipse cx="134" cy="346" rx="2" ry="4"/>
+            <ellipse cx="164" cy="346" rx="2" ry="4"/><ellipse cx="234" cy="346" rx="2" ry="4"/>
+            <ellipse cx="264" cy="346" rx="2" ry="4"/><ellipse cx="294" cy="346" rx="2" ry="4"/>
+          </g>
+          <!-- Diya glow halos -->
+          <g fill="#ff9900" opacity=".2" filter="url(#vFireBlur)">
+            <circle cx="104" cy="348" r="8"/><circle cx="134" cy="348" r="8"/>
+            <circle cx="164" cy="348" r="8"/><circle cx="234" cy="348" r="8"/>
+            <circle cx="264" cy="348" r="8"/><circle cx="294" cy="348" r="8"/>
+          </g>
         </g>
+
+        <!-- Hanging lanterns (left & right, outside pillars) -->
+        <!-- Left lantern -->
+        <line x1="40" y1="148" x2="40" y2="175" stroke="#d4b16a" stroke-width="1.2"/>
+        <path d="M30 175 L50 175 L54 208 L26 208 Z" fill="#c42a38" opacity=".9"/>
+        <rect x="28" y="175" width="24" height="4" fill="#d4b16a"/>
+        <rect x="26" y="205" width="28" height="5" fill="#d4b16a"/>
+        <g stroke="#d4b16a" stroke-width=".8" fill="none" opacity=".6">
+          <line x1="36" y1="179" x2="34" y2="205"/><line x1="40" y1="179" x2="40" y2="205"/>
+          <line x1="44" y1="179" x2="46" y2="205"/>
+        </g>
+        <circle cx="40" cy="192" r="8" fill="#ffee88" opacity=".25" filter="url(#vLanternBlur)"/>
+        <circle cx="40" cy="192" r="4" fill="#ffe866" opacity=".7"/>
+        <!-- Left lantern tassel -->
+        <g stroke="#d4b16a" stroke-width=".7" opacity=".8">
+          <line x1="36" y1="210" x2="35" y2="222"/><line x1="40" y1="210" x2="40" y2="224"/>
+          <line x1="44" y1="210" x2="45" y2="222"/>
+        </g>
+
+        <!-- Right lantern -->
+        <line x1="360" y1="148" x2="360" y2="175" stroke="#d4b16a" stroke-width="1.2"/>
+        <path d="M350 175 L370 175 L374 208 L346 208 Z" fill="#c42a38" opacity=".9"/>
+        <rect x="348" y="175" width="24" height="4" fill="#d4b16a"/>
+        <rect x="346" y="205" width="28" height="5" fill="#d4b16a"/>
+        <g stroke="#d4b16a" stroke-width=".8" fill="none" opacity=".6">
+          <line x1="356" y1="179" x2="354" y2="205"/><line x1="360" y1="179" x2="360" y2="205"/>
+          <line x1="364" y1="179" x2="366" y2="205"/>
+        </g>
+        <circle cx="360" cy="192" r="8" fill="#ffee88" opacity=".25" filter="url(#vLanternBlur)"/>
+        <circle cx="360" cy="192" r="4" fill="#ffe866" opacity=".7"/>
+        <!-- Right lantern tassel -->
+        <g stroke="#d4b16a" stroke-width=".7" opacity=".8">
+          <line x1="356" y1="210" x2="355" y2="222"/><line x1="360" y1="210" x2="360" y2="224"/>
+          <line x1="364" y1="210" x2="365" y2="222"/>
+        </g>
+
+        <!-- Red carpet aisle leading to stage -->
+        <path d="M162 356 L60 500 L340 500 L238 356 Z" fill="url(#vCarpet)"/>
+        <!-- Carpet gold border lines -->
+        <path d="M162 356 L62 498" stroke="#d4b16a" stroke-width="1" opacity=".4"/>
+        <path d="M238 356 L338 498" stroke="#d4b16a" stroke-width="1" opacity=".4"/>
+
+        <!-- Aisle marigold petals scattered -->
+        <g fill="#f5a02a" opacity=".6">
+          <ellipse cx="110" cy="460" rx="3" ry="1.5" transform="rotate(25 110 460)"/>
+          <ellipse cx="130" cy="430" rx="2.5" ry="1.2" transform="rotate(-15 130 430)"/>
+          <ellipse cx="155" cy="400" rx="3" ry="1.5" transform="rotate(40 155 400)"/>
+          <ellipse cx="240" cy="460" rx="3" ry="1.5" transform="rotate(-25 240 460)"/>
+          <ellipse cx="265" cy="420" rx="2.5" ry="1.2" transform="rotate(10 265 420)"/>
+          <ellipse cx="175" cy="440" rx="2.5" ry="1.2" transform="rotate(5 175 440)"/>
+          <ellipse cx="220" cy="438" rx="2.5" ry="1.2" transform="rotate(-8 220 438)"/>
+        </g>
+
+        <!-- Rose petals drifting across foreground -->
+        <g fill="#e07a85" opacity=".65">
+          <ellipse cx="48" cy="355" rx="4" ry="2" transform="rotate(22 48 355)"/>
+          <ellipse cx="358" cy="320" rx="4" ry="2" transform="rotate(-32 358 320)"/>
+          <ellipse cx="30" cy="415" rx="3.5" ry="1.8" transform="rotate(50 30 415)"/>
+          <ellipse cx="375" cy="390" rx="3.5" ry="1.8" transform="rotate(-18 375 390)"/>
+          <ellipse cx="22" cy="300" rx="3" ry="1.5" transform="rotate(65 22 300)"/>
+          <ellipse cx="385" cy="440" rx="3" ry="1.5" transform="rotate(-40 385 440)"/>
+          <ellipse cx="55" cy="470" rx="4" ry="2" transform="rotate(30 55 470)"/>
+          <ellipse cx="345" cy="468" rx="4" ry="2" transform="rotate(-20 345 468)"/>
+        </g>
+
+        <!-- Ground floor shadow -->
+        <ellipse cx="200" cy="498" rx="200" ry="6" fill="rgba(100,20,20,.4)"/>
+
+        <!-- Ambient glow from mandap interior (warm golden light) -->
+        <rect x="80" y="200" width="240" height="150" fill="url(#vFireGlow)" opacity=".18"/>
       </svg>
       <div class="venue-card-overlay">A garden mantap · Bengaluru · June</div>
     </div>
