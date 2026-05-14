@@ -764,7 +764,7 @@ section{position:relative;z-index:2}
 
 /* ============ STORY (PINNED, TEXT CHANGES OVER FIXED IMAGE) ============ */
 .story{position:relative;background:var(--ivory);padding:0}
-.story-pin{position:relative;height:220vh}
+.story-pin{position:relative;height:140vh}
 .story-stage{
   position:sticky;top:0;height:100vh;
   display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;
@@ -1082,26 +1082,6 @@ section{position:relative;z-index:2}
   max-width:50ch;margin:1rem auto 0;
 }
 
-/* ============ MEMORY REEL (STACKED FILM FRAMES) ============ */
-.reel{
-  background:linear-gradient(180deg,var(--paper) 0%,var(--ivory-deep) 100%);
-  padding:2.5rem 0 3rem;position:relative;
-}
-.reel-head{text-align:center;max-width:720px;margin:0 auto 1rem;padding:0 1.5rem}
-.reel-stage{position:relative;height:260vh}
-.reel-track{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.reel-frame{
-  position:absolute;width:min(70vw,360px);aspect-ratio:3/4;
-  background:var(--paper);
-  border:8px solid var(--paper);
-  box-shadow:0 30px 60px rgba(92,26,38,.2),inset 0 0 0 1px var(--gold);
-  border-radius:2px;overflow:hidden;
-  will-change:transform,opacity;
-}
-.reel-frame img{width:100%;height:100%;object-fit:cover}
-.reel-frame::after{
-  content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.4));
-}
 
 /* ============ GALLERY (OVERLAPPING -> SEPARATING) ============ */
 .gallery{background:var(--ivory);padding:7rem 1rem 9rem;position:relative;overflow:hidden}
@@ -1207,11 +1187,11 @@ section{position:relative;z-index:2}
     scroll-behavior:auto !important;
   }
   .hero-scroll-cue,.particle,.petal{display:none}
-  .events-pin,.story-pin,.reel-stage,.gallery-stage{height:auto}
-  .events-track-wrap,.story-stage,.reel-track,.gallery-track{position:static;height:auto}
+  .events-pin,.story-pin,.gallery-stage{height:auto}
+  .events-track-wrap,.story-stage,.gallery-track{position:static;height:auto}
   .events-track{flex-wrap:wrap;justify-content:center}
   .story-chapter{position:relative;opacity:1;transform:none}
-  .reel-frame,.gallery-card{position:relative;transform:none !important;margin:1rem auto}
+  .gallery-card{position:relative;transform:none !important;margin:1rem auto}
 }
 </style>
 </head>
@@ -1408,14 +1388,6 @@ section{position:relative;z-index:2}
     <figure class="moment fade-up">
       <img src="images/01-hands.jpg" alt="Hands held softly">
       <figcaption class="moment-cap">Two hands, one promise.</figcaption>
-    </figure>
-    <figure class="moment fade-up">
-      <img src="images/05-bamboo.jpg" alt="Together">
-      <figcaption class="moment-cap">A quiet pause, before the ceremony.</figcaption>
-    </figure>
-    <figure class="moment fade-up">
-      <img src="images/04-glance.jpg" alt="The glance">
-      <figcaption class="moment-cap">The glance — the one that holds a thousand words.</figcaption>
     </figure>
   </div>
 </section>
@@ -1771,22 +1743,6 @@ section{position:relative;z-index:2}
   <p class="event-hint">↓ Continue scrolling</p>
 </section>
 
-<!-- MEMORY REEL -->
-<section class="reel">
-  <div class="reel-head">
-    <p class="eyebrow fade-up">Memory Reel</p>
-    <h2 class="h-display"><span class="mask-text"><span>Frames from</span></span> <em><span class="mask-text"><span>a love letter</span></span></em></h2>
-  </div>
-  <div class="reel-stage">
-    <div class="reel-track" id="reelTrack">
-      <div class="reel-frame" data-i="0"><img src="images/01-hands.jpg" alt=""></div>
-      <div class="reel-frame" data-i="1"><img src="images/02-rings.jpg" alt=""></div>
-      <div class="reel-frame" data-i="2"><img src="images/03-portrait.jpg" alt=""></div>
-      <div class="reel-frame" data-i="3"><img src="images/04-glance.jpg" alt=""></div>
-      <div class="reel-frame" data-i="4"><img src="images/05-bamboo.jpg" alt=""></div>
-    </div>
-  </div>
-</section>
 
 
 <!-- VENUE -->
@@ -2444,7 +2400,7 @@ if(!reduce){
   // Couple photos: if any local images/*.jpg referenced are missing, mark wrapper for graceful fallback
   document.querySelectorAll('img[src^="images/"]').forEach(img=>{
     img.addEventListener('error',()=>{
-      const wrap = img.closest('.moment, .reel-frame, .gallery-card, .venue-card, .story-image, .hero-bg');
+      const wrap = img.closest('.moment, .gallery-card, .venue-card, .story-image, .hero-bg');
       (wrap || img.parentElement)?.classList.add('img-missing');
     },{once:true});
   });
@@ -2495,7 +2451,7 @@ const imageBurstIO=new IntersectionObserver(es=>{
     }
   });
 },{threshold:.35});
-document.querySelectorAll('.moment img,.reel-frame img,.gallery-card img,.story-image,.venue-card,.hero-bg').forEach(img=>imageBurstIO.observe(img));
+document.querySelectorAll('.moment img,.gallery-card img,.story-image,.venue-card,.hero-bg').forEach(img=>imageBurstIO.observe(img));
 
 /* ---------- Petal drift on scroll velocity ---------- */
 const petalsRoot=document.getElementById('petals');
@@ -2567,32 +2523,6 @@ if(window.gsap && window.ScrollTrigger && !reduce){
       }
     });
   }
-
-  /* MEMORY REEL — stacked frames unfolding */
-  const reelFrames=gsap.utils.toArray('.reel-frame');
-  reelFrames.forEach((f,i)=>{
-    gsap.set(f,{
-      x:(i-2)*8,y:(i-2)*-12,rotation:(i-2)*-4,
-      scale:1-Math.abs(i-2)*0.04,zIndex:reelFrames.length-Math.abs(i-2)
-    });
-  });
-  ScrollTrigger.create({
-    trigger:'.reel-stage',start:'top top',end:'bottom bottom',
-    pin:'.reel-track',scrub:.6,
-    onUpdate:(self)=>{
-      const p=self.progress;
-      reelFrames.forEach((f,i)=>{
-        const k=(i/(reelFrames.length-1));
-        const spread=p*1.0;
-        gsap.set(f,{
-          x:(i-2)*8 + (i-2)*220*spread,
-          y:(i-2)*-12 + Math.sin(k*Math.PI)*30*spread,
-          rotation:(i-2)*-4 + (i-2)*8*spread,
-          scale:1-Math.abs(i-2)*0.04*(1-spread)
-        });
-      });
-    }
-  });
 
   /* Cinematic frame in hero */
   ScrollTrigger.create({trigger:'.hero',start:'top top',end:'bottom top',
