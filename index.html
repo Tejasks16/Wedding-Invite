@@ -1178,12 +1178,12 @@ section{position:relative;z-index:2}
   .monogram{width:46px;height:46px;font-size:1.4rem}
   .theme-toggle{width:38px;height:38px}
 
-  /* Story: disable GSAP pin — show chapters stacked, hide image */
+  /* Story: disable GSAP pin — stack chapters, keep scroll-reveal transition */
   .story-pin{height:auto !important}
   .story-stage{position:static !important;height:auto !important;padding:2rem 1.5rem}
   .story-image{display:none}
   .story-text{height:auto !important}
-  .story-chapter{position:relative !important;opacity:1 !important;transform:none !important;pointer-events:auto;margin-bottom:2rem}
+  .story-chapter{position:relative !important;margin-bottom:2rem}
   .story-chapter:last-child{margin-bottom:0}
 
   /* Events: disable GSAP horizontal scroll — stack cards vertically */
@@ -2517,7 +2517,7 @@ if(window.gsap && window.ScrollTrigger && !reduce){
       scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
   });
 
-  /* STORY pinned: chapters change with scroll (desktop only) */
+  /* STORY: pin+chapter-swap on desktop, scroll-reveal on mobile */
   if(window.innerWidth > 820){
     const chapters=gsap.utils.toArray('.story-chapter');
     ScrollTrigger.create({
@@ -2527,6 +2527,11 @@ if(window.gsap && window.ScrollTrigger && !reduce){
         chapters.forEach((c,i)=>c.classList.toggle('active',i===idx));
       }
     });
+  } else {
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('active'); });
+    },{threshold:0.25});
+    document.querySelectorAll('.story-chapter').forEach(c=>io.observe(c));
   }
 
   /* EVENTS horizontal-on-vertical (desktop only) */
