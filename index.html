@@ -1171,11 +1171,19 @@ section{position:relative;z-index:2}
   .story-image{height:42vh}
   .story-text{position:relative;height:42vh}
   .moments-grid > .moment{grid-column:1/-1 !important;aspect-ratio:4/5 !important}
+  .moments{padding:3rem 1rem}
   .fam-grid{grid-template-columns:1fr;gap:3rem 0;text-align:center}
   .venue-grid{grid-template-columns:1fr;gap:2rem}
   .top-bar{padding:.8rem 1rem}
   .monogram{width:46px;height:46px;font-size:1.4rem}
   .theme-toggle{width:38px;height:38px}
+
+  /* Events: disable GSAP horizontal scroll — stack cards vertically */
+  .events-pin{height:auto}
+  .events-track-wrap{position:static !important;height:auto !important;overflow:visible}
+  .events-track{flex-direction:column;gap:1.5rem;padding:1rem 1.5rem 2rem;transform:none !important}
+  .event-card{width:100%;flex:none;max-width:420px;margin:0 auto;aspect-ratio:9/16}
+  .event-hint{display:none}
 }
 
 /* ============ REDUCED MOTION ============ */
@@ -2511,9 +2519,9 @@ if(window.gsap && window.ScrollTrigger && !reduce){
     }
   });
 
-  /* EVENTS horizontal-on-vertical */
+  /* EVENTS horizontal-on-vertical (desktop only) */
   const track=document.getElementById('eventsTrack');
-  if(track){
+  if(track && window.innerWidth > 820){
     const totalShift=()=>track.scrollWidth - window.innerWidth*0.84;
     gsap.to(track,{
       x:()=>-(totalShift()),ease:'none',
