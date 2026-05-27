@@ -944,42 +944,46 @@ section{position:relative;z-index:2}
   position:absolute;top:0;left:0;right:0;height:18%;z-index:2;pointer-events:none;
 }
 .event-info{
-  position:relative;z-index:3;text-align:center;padding:1rem 1.2rem 1.4rem;
+  position:relative;z-index:3;text-align:center;padding:1.4rem 1.2rem 1.8rem;
   display:flex;flex-direction:column;align-items:center;gap:.45rem;
+  background:linear-gradient(0deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.65) 60%,rgba(0,0,0,.35) 100%);
+  width:100%;
 }
 .event-quote{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
-  font-size:.78rem;color:rgba(255,255,255,.92);max-width:28ch;line-height:1.45;
-  text-shadow:0 1px 6px rgba(0,0,0,.35);
+  font-size:.78rem;color:#fff;max-width:28ch;line-height:1.45;
+  text-shadow:0 2px 10px rgba(0,0,0,.85);
 }
 .event-name{
   font-family:'Italianno',cursive;font-weight:400;
   font-size:clamp(2.4rem,7vw,3.4rem);line-height:1;
-  color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.45);
+  color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.95),0 4px 28px rgba(0,0,0,.8);
   letter-spacing:.005em;margin:.1rem 0;
 }
 .event-date-row{
   display:flex;align-items:center;gap:.7rem;
   font-family:'Cormorant Garamond',serif;color:#fff;
-  text-shadow:0 2px 8px rgba(0,0,0,.4);
+  text-shadow:0 2px 10px rgba(0,0,0,.9),0 4px 20px rgba(0,0,0,.7);
 }
 .event-date-row .dow{font-weight:500;font-size:.95rem;letter-spacing:.05em}
 .event-date-row .sep{opacity:.6;font-size:1.4rem;line-height:1}
-.event-date-row .num{font-weight:600;font-size:1.9rem;line-height:1;color:#fff;font-family:'Cormorant Garamond',serif}
+.event-date-row .num{font-weight:600;font-size:1.9rem;line-height:1;color:#fff;font-family:'Cormorant Garamond',serif;text-shadow:0 2px 10px rgba(0,0,0,.9),0 4px 20px rgba(0,0,0,.7)}
 .event-date-row .mo{font-weight:500;font-size:.95rem;letter-spacing:.05em}
 .event-year{
   font-family:'Inter',sans-serif;font-weight:400;font-size:.65rem;letter-spacing:.4em;
-  text-transform:uppercase;color:rgba(255,255,255,.85);margin-top:.05rem;
+  text-transform:uppercase;color:#fff;margin-top:.05rem;
+  text-shadow:0 1px 8px rgba(0,0,0,.9);
 }
 .event-time{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;
-  color:rgba(255,255,255,.92);margin-top:.1rem;
-  text-shadow:0 1px 4px rgba(0,0,0,.4);
+  color:#fff;margin-top:.1rem;
+  text-shadow:0 2px 10px rgba(0,0,0,.9),0 4px 20px rgba(0,0,0,.7);
 }
 .event-tag{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;
-  color:rgba(255,255,255,.85);margin-top:.35rem;padding:.25rem 1rem;
-  border-top:1px solid rgba(255,255,255,.5);border-bottom:1px solid rgba(255,255,255,.5);
+  color:#fff;margin-top:.35rem;padding:.25rem 1rem;
+  border-top:1px solid rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.6);
+  text-shadow:0 1px 8px rgba(0,0,0,.9);
 }
 .event-card.theme-light .event-quote,
 .event-card.theme-light .event-name,
@@ -1015,14 +1019,12 @@ section{position:relative;z-index:2}
 /* Reception — vibrant floral arch photo */
 .event-reception .event-art{
   background-image:
-    linear-gradient(180deg,rgba(80,30,20,0.0) 0%,rgba(80,30,20,0.15) 55%,rgba(60,20,10,0.72) 100%),
+    linear-gradient(180deg,rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.88) 100%),
     url('images/event-reception-bg.jpg');
   background-color:#d4826a;background-position:center top;
 }
 .event-reception .event-art::before{
-  background:
-    radial-gradient(ellipse at 50% 0%,rgba(255,235,200,.4) 0%,transparent 50%),
-    radial-gradient(ellipse at 50% 100%,rgba(255,180,150,.25) 0%,transparent 60%);
+  background:none;
 }
 /* SVG fallback art (visible until real image is loaded) */
 .event-art-fallback{position:absolute;inset:0;z-index:0;display:block}
@@ -1037,13 +1039,12 @@ section{position:relative;z-index:2}
 }
 .event-wedding .event-art{
   background-image:
-    linear-gradient(180deg,rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.18) 55%,rgba(0,0,0,0.68) 100%),
+    linear-gradient(180deg,rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.88) 100%),
     url('images/event-muhurtham-bg.jpg');
   background-color:#c8a070;background-position:center top;
 }
 .event-wedding .event-art::before{
-  background:
-    radial-gradient(ellipse at 50% 0%,rgba(255,180,170,.45) 0%,transparent 45%);
+  background:none;
 }
 .event-wedding.theme-light{background:#fbf6ec}
 
