@@ -790,10 +790,7 @@ section{position:relative;z-index:2}
   pointer-events:none;
 }
 .story-chapter.active{opacity:1;transform:translateY(0)}
-.story-num{
-  font-family:'Italianno',cursive;font-size:3.6rem;color:var(--gold);
-  line-height:1;margin-bottom:.4rem;
-}
+.story-num{display:none}
 .story-chapter h3{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
   font-size:clamp(1.8rem,4.5vw,3rem);color:var(--charcoal);line-height:1.1;
@@ -946,44 +943,45 @@ section{position:relative;z-index:2}
 .event-info{
   position:relative;z-index:3;text-align:center;padding:1.4rem 1.2rem 1.8rem;
   display:flex;flex-direction:column;align-items:center;gap:.45rem;
-  background:linear-gradient(0deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.65) 60%,rgba(0,0,0,.35) 100%);
+  background:none;
   width:100%;
 }
 .event-quote{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
-  font-size:.78rem;color:#fff;max-width:28ch;line-height:1.45;
-  text-shadow:0 2px 10px rgba(0,0,0,.85);
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:.82rem;color:#fff;max-width:28ch;line-height:1.45;
+  text-shadow:1px 1px 0 rgba(0,0,0,.6),0 2px 12px rgba(0,0,0,.55),0 4px 24px rgba(0,0,0,.35);
 }
 .event-name{
   font-family:'Italianno',cursive;font-weight:400;
   font-size:clamp(2.4rem,7vw,3.4rem);line-height:1;
-  color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.95),0 4px 28px rgba(0,0,0,.8);
+  color:#fff;
+  text-shadow:1px 1px 0 rgba(0,0,0,.55),0 2px 14px rgba(0,0,0,.5),0 6px 32px rgba(0,0,0,.35);
   letter-spacing:.005em;margin:.1rem 0;
 }
 .event-date-row{
   display:flex;align-items:center;gap:.7rem;
   font-family:'Cormorant Garamond',serif;color:#fff;
-  text-shadow:0 2px 10px rgba(0,0,0,.9),0 4px 20px rgba(0,0,0,.7);
+  text-shadow:1px 1px 0 rgba(0,0,0,.55),0 2px 10px rgba(0,0,0,.5),0 4px 20px rgba(0,0,0,.3);
 }
 .event-date-row .dow{font-weight:500;font-size:.95rem;letter-spacing:.05em}
-.event-date-row .sep{opacity:.6;font-size:1.4rem;line-height:1}
-.event-date-row .num{font-weight:600;font-size:1.9rem;line-height:1;color:#fff;font-family:'Cormorant Garamond',serif;text-shadow:0 2px 10px rgba(0,0,0,.9),0 4px 20px rgba(0,0,0,.7)}
+.event-date-row .sep{opacity:.7;font-size:1.4rem;line-height:1}
+.event-date-row .num{font-weight:600;font-size:1.9rem;line-height:1;color:#fff;font-family:'Cormorant Garamond',serif}
 .event-date-row .mo{font-weight:500;font-size:.95rem;letter-spacing:.05em}
 .event-year{
   font-family:'Inter',sans-serif;font-weight:400;font-size:.65rem;letter-spacing:.4em;
-  text-transform:uppercase;color:#fff;margin-top:.05rem;
-  text-shadow:0 1px 8px rgba(0,0,0,.9);
+  text-transform:uppercase;color:rgba(255,255,255,.95);margin-top:.05rem;
+  text-shadow:0 1px 6px rgba(0,0,0,.5),0 2px 14px rgba(0,0,0,.35);
 }
 .event-time{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;
   color:#fff;margin-top:.1rem;
-  text-shadow:0 2px 10px rgba(0,0,0,.9),0 4px 20px rgba(0,0,0,.7);
+  text-shadow:1px 1px 0 rgba(0,0,0,.5),0 2px 10px rgba(0,0,0,.45),0 4px 20px rgba(0,0,0,.3);
 }
 .event-tag{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;
-  color:#fff;margin-top:.35rem;padding:.25rem 1rem;
-  border-top:1px solid rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.6);
-  text-shadow:0 1px 8px rgba(0,0,0,.9);
+  color:rgba(255,255,255,.97);margin-top:.35rem;padding:.25rem 1rem;
+  border-top:1px solid rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.55);
+  text-shadow:0 1px 6px rgba(0,0,0,.5),0 2px 14px rgba(0,0,0,.35);
 }
 .event-card.theme-light .event-quote,
 .event-card.theme-light .event-name,
@@ -1019,7 +1017,7 @@ section{position:relative;z-index:2}
 /* Reception — vibrant floral arch photo */
 .event-reception .event-art{
   background-image:
-    linear-gradient(180deg,rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.88) 100%),
+    linear-gradient(180deg,rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.18) 100%),
     url('images/event-reception-bg.jpg');
   background-color:#d4826a;background-position:center top;
 }
@@ -1039,7 +1037,7 @@ section{position:relative;z-index:2}
 }
 .event-wedding .event-art{
   background-image:
-    linear-gradient(180deg,rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.88) 100%),
+    linear-gradient(180deg,rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.18) 100%),
     url('images/event-muhurtham-bg.jpg');
   background-color:#c8a070;background-position:center top;
 }
@@ -1181,12 +1179,24 @@ section{position:relative;z-index:2}
   .monogram{width:46px;height:46px;font-size:1.4rem}
   .theme-toggle{width:38px;height:38px}
 
-  /* Story: disable GSAP pin — stack chapters, keep scroll-reveal transition */
+  /* Story: disable GSAP pin — stack chapters tall enough to scroll one-at-a-time */
   .story-pin{height:auto !important}
-  .story-stage{position:static !important;height:auto !important;padding:2rem 1.5rem}
+  .story-stage{position:static !important;height:auto !important;padding:0}
   .story-image{display:none}
   .story-text{height:auto !important}
-  .story-chapter{position:relative !important;margin-bottom:2rem}
+  .story-chapter{
+    position:relative !important;
+    min-height:80vh;
+    display:flex !important;
+    flex-direction:column;
+    justify-content:center;
+    padding:3rem 2rem;
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1);
+    margin-bottom:0;
+  }
+  .story-chapter.active{opacity:1;transform:translateY(0) !important}
   .story-chapter:last-child{margin-bottom:0}
 
   /* Events: disable GSAP horizontal scroll — stack cards vertically */
@@ -1222,18 +1232,41 @@ section{position:relative;z-index:2}
 .hero-card{transform-style:preserve-3d;will-change:transform}
 .hero-card.float-on{animation:float3d 8s ease-in-out infinite}
 
-/* mobile story chapters — 3D perspective tilt for IntersectionObserver reveal */
+/* mobile story chapters — subtle lift-in reveal */
 @media(max-width:820px){
   .story-chapter:not(.active){
-    transform:perspective(900px) rotateX(32deg) translateY(24px) !important;
+    opacity:0;transform:translateY(36px) !important;
   }
   .story-chapter.active{
-    transform:perspective(900px) rotateX(0deg) translateY(0px) !important;
-    transition:opacity .85s ease,transform .85s cubic-bezier(.22,1,.36,1);
+    opacity:1;transform:translateY(0) !important;
   }
 }
 
 .moment,.venue-card,.scratch-tile,.event-card{will-change:transform}
+
+/* ===== CLOSING ORNAMENT ===== */
+.closing-ornament{display:flex;flex-direction:column;align-items:center;margin:2.5rem auto .5rem;gap:.6rem}
+@keyframes mandalaSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.closing-mandala{animation:mandalaSpin 28s linear infinite;opacity:.85;display:block}
+.closing-sparks{display:flex;align-items:center;gap:.9rem;color:var(--gold);font-size:.7rem}
+@keyframes sparkPulse{0%,100%{transform:translateY(0) scale(1);opacity:.5}50%{transform:translateY(-5px) scale(1.3);opacity:1}}
+.closing-sparks span{animation:sparkPulse 2.2s ease-in-out infinite}
+.closing-sparks span:nth-child(2){animation-delay:.44s}
+.closing-sparks span:nth-child(3){animation-delay:.88s}
+.closing-sparks span:nth-child(4){animation-delay:1.32s}
+.closing-sparks span:nth-child(5){animation-delay:1.76s}
+@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.45)}30%{transform:scale(1)}45%{transform:scale(1.2)}60%{transform:scale(1)}}
+.cf-heart{display:inline-block;color:var(--rose-deep);animation:heartbeat 2s ease-in-out infinite}
+.closing-foot{
+  font-family:'Inter',sans-serif;font-weight:400;font-size:.65rem;
+  letter-spacing:.35em;text-transform:uppercase;color:var(--gold);
+  margin-top:.5rem;
+}
+.closing-epilogue{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
+  font-size:clamp(.9rem,2vw,1.05rem);color:var(--charcoal-soft);
+  opacity:.65;margin-top:.4rem;letter-spacing:.02em;
+}
 </style>
 </head>
 <body class="env-locked">
@@ -1600,7 +1633,7 @@ section{position:relative;z-index:2}
 
         <!-- MUHURTHAM (Wedding) -->
         <article class="event-card event-wedding">
-          <p class="event-strip"><span class="star">✦</span>Day 2 · 25/06/2026<span class="star">✦</span><br>The Muhurtham</p>
+          <p class="event-strip"><span class="star">✦</span>Day 2 · 25/06/2026<span class="star">✦</span></p>
           <div class="event-art" id="weddingArt">
             <div class="event-art-fallback" aria-hidden="true">
               <svg viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice">
@@ -2205,7 +2238,44 @@ section{position:relative;z-index:2}
   <p class="eyebrow fade-up">Until then</p>
   <p class="closing-line fade-up">Bring your laughter and your blessings.</p>
   <p class="closing-names fade-up">Tejas &amp; Sneha</p>
-  <p class="closing-foot">With love · Bengaluru · MMXXVI</p>
+
+  <!-- Creative footer ornament -->
+  <div class="closing-ornament fade-up" aria-hidden="true">
+    <svg class="closing-mandala" viewBox="0 0 100 100" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- outer dot ring -->
+      <g fill="#b6914a" opacity=".45">
+        <circle cx="50" cy="8"  r="2"/><circle cx="79" cy="21" r="2"/><circle cx="92" cy="50" r="2"/>
+        <circle cx="79" cy="79" r="2"/><circle cx="50" cy="92" r="2"/><circle cx="21" cy="79" r="2"/>
+        <circle cx="8"  cy="50" r="2"/><circle cx="21" cy="21" r="2"/>
+      </g>
+      <!-- outer petal ring -->
+      <g fill="#c8a060" opacity=".35">
+        <ellipse cx="50" cy="20" rx="4.5" ry="11"/><ellipse cx="50" cy="20" rx="4.5" ry="11" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="20" rx="4.5" ry="11" transform="rotate(90 50 50)"/><ellipse cx="50" cy="20" rx="4.5" ry="11" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="20" rx="4.5" ry="11" transform="rotate(180 50 50)"/><ellipse cx="50" cy="20" rx="4.5" ry="11" transform="rotate(225 50 50)"/>
+        <ellipse cx="50" cy="20" rx="4.5" ry="11" transform="rotate(270 50 50)"/><ellipse cx="50" cy="20" rx="4.5" ry="11" transform="rotate(315 50 50)"/>
+      </g>
+      <!-- inner petal ring -->
+      <g fill="#b6914a" opacity=".65">
+        <ellipse cx="50" cy="31" rx="3" ry="8"/><ellipse cx="50" cy="31" rx="3" ry="8" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="31" rx="3" ry="8" transform="rotate(90 50 50)"/><ellipse cx="50" cy="31" rx="3" ry="8" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="31" rx="3" ry="8" transform="rotate(180 50 50)"/><ellipse cx="50" cy="31" rx="3" ry="8" transform="rotate(225 50 50)"/>
+        <ellipse cx="50" cy="31" rx="3" ry="8" transform="rotate(270 50 50)"/><ellipse cx="50" cy="31" rx="3" ry="8" transform="rotate(315 50 50)"/>
+      </g>
+      <!-- center -->
+      <circle cx="50" cy="50" r="10" stroke="#b6914a" stroke-width="1" opacity=".55"/>
+      <circle cx="50" cy="50" r="5.5" fill="#b6914a" opacity=".75"/>
+      <circle cx="50" cy="50" r="2.5" fill="#fff8ec"/>
+    </svg>
+    <div class="closing-sparks">
+      <span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span>
+    </div>
+  </div>
+
+  <p class="closing-foot fade-up">
+    crafted with <span class="cf-heart">♥</span> in Bengaluru · MMXXVI
+  </p>
+  <p class="closing-epilogue fade-up">Two families. One beautiful forever.</p>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -2554,8 +2624,8 @@ if(window.gsap && window.ScrollTrigger && !reduce){
     });
   } else {
     const io=new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('active'); });
-    },{threshold:0.25});
+      entries.forEach(e=>e.target.classList.toggle('active',e.isIntersecting));
+    },{threshold:0.4,rootMargin:'-10% 0px -10% 0px'});
     document.querySelectorAll('.story-chapter').forEach(c=>io.observe(c));
   }
 
