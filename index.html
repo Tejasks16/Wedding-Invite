@@ -1186,18 +1186,18 @@ section{position:relative;z-index:2}
   .story-text{height:auto !important}
   .story-chapter{
     position:relative !important;
-    min-height:80vh;
+    min-height:55vh;
     display:flex !important;
     flex-direction:column;
     justify-content:center;
-    padding:3rem 2rem;
+    padding:2rem 2rem;
     opacity:0;
-    transform:translateY(30px);
-    transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1);
+    transform:translateY(24px);
+    transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1);
     margin-bottom:0;
   }
   .story-chapter.active{opacity:1;transform:translateY(0) !important}
-  .story-chapter:last-child{margin-bottom:0}
+  .story-chapter:last-child{min-height:45vh}
 
   /* Events: disable GSAP horizontal scroll — stack cards vertically */
   .events-pin{height:auto}
@@ -2625,7 +2625,7 @@ if(window.gsap && window.ScrollTrigger && !reduce){
   } else {
     const io=new IntersectionObserver((entries)=>{
       entries.forEach(e=>e.target.classList.toggle('active',e.isIntersecting));
-    },{threshold:0.4,rootMargin:'-10% 0px -10% 0px'});
+    },{threshold:0.25,rootMargin:'-5% 0px -5% 0px'});
     document.querySelectorAll('.story-chapter').forEach(c=>io.observe(c));
   }
 
