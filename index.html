@@ -716,6 +716,8 @@ section{position:relative;z-index:2}
   margin:.2rem 0 .5rem;
 }
 [data-theme="dark"] .hero-name{color:#92c497}
+[data-theme="dark"] .hero-quote{color:rgba(240,225,200,.88);text-shadow:0 1px 8px rgba(0,0,0,.5)}
+[data-theme="dark"] .hero-card-inner::before,[data-theme="dark"] .hero-card-inner::after{background:#4a3820}
 .hero-name .sweep{display:inline-block}
 .hero-name-sub{
   font-family:'Inter',sans-serif;font-weight:500;font-size:.62rem;
@@ -942,47 +944,47 @@ section{position:relative;z-index:2}
   position:absolute;top:0;left:0;right:0;height:18%;z-index:2;pointer-events:none;
 }
 .event-info{
-  position:relative;z-index:3;text-align:center;padding:1.4rem 1.2rem 1.8rem;
-  display:flex;flex-direction:column;align-items:center;gap:.45rem;
+  position:relative;z-index:3;text-align:center;padding:1.2rem 1.2rem 1.6rem;
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;
   background:none;
   width:100%;
 }
 .event-quote{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
-  font-size:.82rem;color:#fff;max-width:28ch;line-height:1.45;
-  text-shadow:1px 1px 0 rgba(0,0,0,.6),0 2px 12px rgba(0,0,0,.55),0 4px 24px rgba(0,0,0,.35);
+  font-size:.85rem;color:#fff;max-width:28ch;line-height:1.5;
+  text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 12px rgba(0,0,0,.7),0 4px 24px rgba(0,0,0,.5);
 }
 .event-name{
   font-family:'Italianno',cursive;font-weight:400;
-  font-size:clamp(2.4rem,7vw,3.4rem);line-height:1;
+  font-size:clamp(2.6rem,7vw,3.6rem);line-height:1;
   color:#fff;
-  text-shadow:1px 1px 0 rgba(0,0,0,.55),0 2px 14px rgba(0,0,0,.5),0 6px 32px rgba(0,0,0,.35);
+  text-shadow:0 2px 4px rgba(0,0,0,.9),0 4px 16px rgba(0,0,0,.65),0 8px 32px rgba(0,0,0,.4);
   letter-spacing:.005em;margin:.1rem 0;
 }
 .event-date-row{
   display:flex;align-items:center;gap:.7rem;
-  font-family:'Cormorant Garamond',serif;color:#fff;
-  text-shadow:1px 1px 0 rgba(0,0,0,.55),0 2px 10px rgba(0,0,0,.5),0 4px 20px rgba(0,0,0,.3);
+  font-family:'Cormorant Garamond',serif;color:#fff;font-weight:500;
+  text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 10px rgba(0,0,0,.65),0 4px 20px rgba(0,0,0,.4);
 }
-.event-date-row .dow{font-weight:500;font-size:.95rem;letter-spacing:.05em}
-.event-date-row .sep{opacity:.7;font-size:1.4rem;line-height:1}
-.event-date-row .num{font-weight:600;font-size:1.9rem;line-height:1;color:#fff;font-family:'Cormorant Garamond',serif}
-.event-date-row .mo{font-weight:500;font-size:.95rem;letter-spacing:.05em}
+.event-date-row .dow{font-weight:600;font-size:1rem;letter-spacing:.04em}
+.event-date-row .sep{opacity:.8;font-size:1.4rem;line-height:1}
+.event-date-row .num{font-weight:700;font-size:2rem;line-height:1;color:#fff;font-family:'Cormorant Garamond',serif}
+.event-date-row .mo{font-weight:600;font-size:1rem;letter-spacing:.04em}
 .event-year{
-  font-family:'Inter',sans-serif;font-weight:400;font-size:.65rem;letter-spacing:.4em;
-  text-transform:uppercase;color:rgba(255,255,255,.95);margin-top:.05rem;
-  text-shadow:0 1px 6px rgba(0,0,0,.5),0 2px 14px rgba(0,0,0,.35);
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.68rem;letter-spacing:.4em;
+  text-transform:uppercase;color:#fff;margin-top:.1rem;
+  text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 10px rgba(0,0,0,.6);
 }
 .event-time{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;
-  color:#fff;margin-top:.1rem;
-  text-shadow:1px 1px 0 rgba(0,0,0,.5),0 2px 10px rgba(0,0,0,.45),0 4px 20px rgba(0,0,0,.3);
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;font-weight:500;
+  color:#fff;margin-top:.15rem;
+  text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 10px rgba(0,0,0,.65),0 4px 20px rgba(0,0,0,.4);
 }
 .event-tag{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;
-  color:rgba(255,255,255,.97);margin-top:.35rem;padding:.25rem 1rem;
-  border-top:1px solid rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.55);
-  text-shadow:0 1px 6px rgba(0,0,0,.5),0 2px 14px rgba(0,0,0,.35);
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;font-weight:500;
+  color:#fff;margin-top:.4rem;padding:.28rem 1.1rem;
+  border-top:1px solid rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.65);
+  text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 10px rgba(0,0,0,.6);
 }
 .event-card.theme-light .event-quote,
 .event-card.theme-light .event-name,
@@ -1018,7 +1020,7 @@ section{position:relative;z-index:2}
 /* Reception — vibrant floral arch photo */
 .event-reception .event-art{
   background-image:
-    linear-gradient(180deg,rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.18) 100%),
+    linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.0) 22%,rgba(0,0,0,0.0) 58%,rgba(0,0,0,0.7) 100%),
     url('images/event-reception-bg.jpg');
   background-color:#d4826a;background-position:center top;
 }
@@ -1038,7 +1040,7 @@ section{position:relative;z-index:2}
 }
 .event-wedding .event-art{
   background-image:
-    linear-gradient(180deg,rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.18) 100%),
+    linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.0) 22%,rgba(0,0,0,0.0) 58%,rgba(0,0,0,0.7) 100%),
     url('images/event-muhurtham-bg.jpg');
   background-color:#c8a070;background-position:center top;
 }
