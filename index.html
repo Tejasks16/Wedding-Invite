@@ -715,6 +715,7 @@ section{position:relative;z-index:2}
   letter-spacing:.005em;
   margin:.2rem 0 .5rem;
 }
+[data-theme="dark"] .hero-name{color:#92c497}
 .hero-name .sweep{display:inline-block}
 .hero-name-sub{
   font-family:'Inter',sans-serif;font-weight:500;font-size:.62rem;
@@ -793,13 +794,13 @@ section{position:relative;z-index:2}
 .story-num{display:none}
 .story-chapter h3{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
-  font-size:clamp(1.8rem,4.5vw,3rem);color:var(--charcoal);line-height:1.1;
-  margin-bottom:1rem;
+  font-size:clamp(1.3rem,3vw,2rem);color:var(--charcoal);line-height:1.2;
+  margin-bottom:.7rem;
 }
 .story-chapter p{
   font-family:'Cormorant Garamond',serif;font-weight:300;
-  font-size:clamp(1.05rem,1.8vw,1.25rem);color:var(--charcoal-soft);
-  max-width:42ch;line-height:1.7;
+  font-size:clamp(.95rem,1.5vw,1.1rem);color:var(--charcoal-soft);
+  max-width:40ch;line-height:1.65;
 }
 
 /* ============ SAVE THE DATE (SCRATCH-TO-REVEAL) ============ */
@@ -1186,18 +1187,19 @@ section{position:relative;z-index:2}
   .story-text{height:auto !important}
   .story-chapter{
     position:relative !important;
-    min-height:55vh;
+    min-height:42vh;
     display:flex !important;
     flex-direction:column;
     justify-content:center;
-    padding:2rem 2rem;
+    padding:1.5rem 1.8rem;
     opacity:0;
-    transform:translateY(24px);
-    transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1);
+    transform:translateY(20px);
+    transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1);
     margin-bottom:0;
+    border-left:2px solid var(--gold);
   }
   .story-chapter.active{opacity:1;transform:translateY(0) !important}
-  .story-chapter:last-child{min-height:45vh}
+  .story-chapter:last-child{min-height:36vh}
 
   /* Events: disable GSAP horizontal scroll — stack cards vertically */
   .events-pin{height:auto}
@@ -1372,12 +1374,10 @@ section{position:relative;z-index:2}
     <p class="hero-quote-by fade-up"></p>
 
     <h2 class="hero-name fade-up"><span class="sweep">Tejas</span></h2>
-    <p class="hero-name-sub fade-up">Son of Mr. Swamy &amp; Ms. Suma</p>
 
     <span class="hero-amp-block fade-up">&amp;</span>
 
     <h2 class="hero-name fade-up"><span class="sweep">Sneha</span></h2>
-    <p class="hero-name-sub fade-up">Daughter of Mr. Nagrajappa &amp; Ms. Mamatha</p>
     </div><!-- /.hero-card -->
   </div>
   <div class="hero-scroll-cue">Scroll the story</div>
@@ -2623,10 +2623,19 @@ if(window.gsap && window.ScrollTrigger && !reduce){
       }
     });
   } else {
-    const io=new IntersectionObserver((entries)=>{
-      entries.forEach(e=>e.target.classList.toggle('active',e.isIntersecting));
-    },{threshold:0.25,rootMargin:'-5% 0px -5% 0px'});
-    document.querySelectorAll('.story-chapter').forEach(c=>io.observe(c));
+    const mChapters=Array.from(document.querySelectorAll('.story-chapter'));
+    function pickActiveChapter(){
+      const mid=window.innerHeight/2;
+      let best=null,bestDist=Infinity;
+      mChapters.forEach(c=>{
+        const r=c.getBoundingClientRect();
+        const dist=Math.abs(r.top+r.height/2-mid);
+        if(dist<bestDist){bestDist=dist;best=c;}
+      });
+      mChapters.forEach(c=>c.classList.toggle('active',c===best));
+    }
+    pickActiveChapter();
+    window.addEventListener('scroll',pickActiveChapter,{passive:true});
   }
 
   /* EVENTS horizontal-on-vertical (desktop only) */
