@@ -866,6 +866,17 @@ section{position:relative;z-index:2}
 .scratch-tile.done .scratch-hint{opacity:.35}
 .scratch-tile.done .scratch-hint::before{content:'✓';color:#5a7a5e}
 
+/* Dark-mode overrides for Save the Date readability */
+[data-theme="dark"] .savedate{
+  background:linear-gradient(180deg,var(--ivory) 0%,#241c14 50%,var(--ivory) 100%);
+}
+[data-theme="dark"] .savedate-tagline{color:#d8c9a8}
+[data-theme="dark"] .savedate .h-display em{color:#92c497}
+[data-theme="dark"] .scratch-label{color:#e6c98a;opacity:.95}
+[data-theme="dark"] .scratch-hint{color:#92c497}
+[data-theme="dark"] .scratch-hint::before,
+[data-theme="dark"] .scratch-tile.done .scratch-hint::before{color:#92c497}
+
 .savedate-foot{
   font-family:'Cormorant Garamond',serif;font-style:italic;color:#3f5a45;
   margin-top:1.2rem;opacity:0;transition:opacity .8s ease;
@@ -2627,17 +2638,19 @@ if(window.gsap && window.ScrollTrigger && !reduce){
   } else {
     const mChapters=Array.from(document.querySelectorAll('.story-chapter'));
     function pickActiveChapter(){
-      const mid=window.innerHeight/2;
-      let best=null,bestDist=Infinity;
+      // Activate the LAST chapter whose top has scrolled above the 35%-from-top line.
+      // This makes chapter 0 active as soon as the story section enters the viewport,
+      // then advances forward as the user scrolls down.
+      const threshold=window.innerHeight*0.35;
+      let active=mChapters[0];
       mChapters.forEach(c=>{
-        const r=c.getBoundingClientRect();
-        const dist=Math.abs(r.top+r.height/2-mid);
-        if(dist<bestDist){bestDist=dist;best=c;}
+        if(c.getBoundingClientRect().top < threshold) active=c;
       });
-      mChapters.forEach(c=>c.classList.toggle('active',c===best));
+      mChapters.forEach(c=>c.classList.toggle('active',c===active));
     }
     pickActiveChapter();
     window.addEventListener('scroll',pickActiveChapter,{passive:true});
+    window.addEventListener('resize',pickActiveChapter,{passive:true});
   }
 
   /* EVENTS horizontal-on-vertical (desktop only) */
